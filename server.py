@@ -14,10 +14,20 @@ def update_otp():
         print(f"새로운 OTP: {otp}")  # 디버깅용 출력
         time.sleep(60)  # 1분마다 갱신
 
-# 기본 페이지에서 OTP 표시
+# 기본 페이지에서 OTP 표시 및 자동 새로고침
 @app.route("/", methods=["GET"])
 def home():
-    return f"<h1>현재 OTP: {otp}</h1>"
+    return f"""
+    <html>
+        <head>
+            <meta http-equiv="refresh" content="10">
+        </head>
+        <body>
+            <h1>현재 OTP: {otp}</h1>
+            <p>페이지는 10초마다 자동으로 새로고침됩니다.</p>
+        </body>
+    </html>
+    """
 
 @app.route("/verify-otp", methods=["POST"])
 def verify_otp():
