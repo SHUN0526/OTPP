@@ -4,7 +4,7 @@
 
 const char* ssid = "이승훈의 iPhone";         // Wi-Fi SSID
 const char* password = "0011001100"; // Wi-Fi 비밀번호
-const String server_url = "http://172:5000";
+const String server_url = "http://172.20.10.2:5000";
 
 // 키패드 설정
 const byte ROWS = 4;

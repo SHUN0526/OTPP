@@ -14,10 +14,10 @@ def update_otp():
         print(f"새로운 OTP: {otp}")  # 디버깅용 출력
         time.sleep(60)  # 1분마다 갱신
 
-# Flask 서버 시작
-@app.route("/get-otp", methods=["GET"])
-def get_otp():
-    return jsonify({"otp": otp})
+# 기본 페이지에서 OTP 표시
+@app.route("/", methods=["GET"])
+def home():
+    return f"<h1>현재 OTP: {otp}</h1>"
 
 @app.route("/verify-otp", methods=["POST"])
 def verify_otp():
